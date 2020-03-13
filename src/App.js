@@ -27,7 +27,7 @@ export default class App extends Component {
       <div className="App">
         <h1>Hello</h1>
         {this.state.robots.map(el => (
-          <div>{el.title}</div>
+          <div>{el.id + "." + el.title}</div>
         ))}
       </div>
     );
