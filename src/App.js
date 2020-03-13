@@ -1,34 +1,31 @@
 import React, { Component } from "react";
-import "./styles.css";
+
+import { PostList } from "./components/post-list";
+
+import "./App.css";
 
 export default class App extends Component {
   constructor() {
     super();
 
     this.state = {
-      robots: []
+      posts: []
     };
   }
 
   componentDidMount() {
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then(response => response.json())
-      .then(data => this.setState({ robots: data }))
+      .then(data => this.setState({ posts: data }))
       .catch(rejected => {
         console.log(rejected);
       });
-    /*fetch("https://jsonplaceholder.typicode.com/posts")
-      .then(response => response.json())
-      .then(json => this.setState({ robots: json }));*/
   }
   render() {
-    console.log(this.state.robots);
     return (
       <div className="App">
-        <h1>Hello</h1>
-        {this.state.robots.map(el => (
-          <div>{el.id + "." + el.title}</div>
-        ))}
+        <h1>Posts</h1>
+        <PostList posts={this.state.posts} />
       </div>
     );
   }
