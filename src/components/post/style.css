@@ -1,0 +1,19 @@
+.post-container {
+  display: flex;
+  flex-direction: column;
+  background-color: darkgreen;
+  border: 1px solid green;
+  border-radius: 5px;
+  padding: 25px;
+  transition: transition 0 25s ease-out;
+  cursor: pointer;
+}
+.post-container:hover {
+  transform: scale(1.05);
+}
+h2 {
+  font-size: 16px;
+}
+p {
+  font-size: 12px;
+}
